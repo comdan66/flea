@@ -31,25 +31,34 @@ body {
   @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
 
   > div {
-    margin: 0 auto;
     display: inline-block;
+    margin: 0 auto;
     width: $mainWidth;
-    height: 100%;
-    text-align: left;
-    @include clearfix();
+    @include split-right(200px);
 
-    a {
-      display: inline-block;
-      float: left;
-      line-height: $navbarHeight - 2px;
-      padding: 0 10px;
-      @include a();
-      &.active, &:hover {
-        border-bottom-width: 2px;
+    .l, .r {
+      height: 100%;
+      text-align: left;
+      @include clearfix();
+
+      a {
+        display: inline-block;
+        float: left;
+        line-height: $navbarHeight - 2px;
+        padding: 0 10px;
+        @include a();
+        &.active, &:hover {
+          border-bottom-width: 2px;
+        }
+
+        + a {
+          margin-left: 10px;
+        }
       }
-
-      + a {
-        margin-left: 10px;
+    }
+    .r {
+      a {
+        float: right;
       }
     }
   }

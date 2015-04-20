@@ -1,11 +1,18 @@
 <div id="header">
   <div>
     <div class='l'>
-      <a class="active" href="space.html">空格</a>
-      <a href="string.html">字串</a>
+<?php if ($as['l']) {
+        foreach ($as['l'] as $k => $a) { ?>
+          <a <?php echo $a == current_url () ? "class='active' " : '';?>href="<?php echo $a;?>"><?php echo $k;?></a>
+  <?php }
+      } ?>
     </div> 
     <div class='r'>
-      <a href="string.html">字串</a>
+<?php if ($as['r']) {
+        foreach ($as['r'] as $k => $a) { ?>
+          <a <?php echo $a == current_url () ? "class='active' " : '';?>href="<?php echo $a;?>"><?php echo $k;?></a>
+  <?php }
+      } ?>
     </div> 
   </div>
 </div>

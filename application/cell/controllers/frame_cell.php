@@ -12,8 +12,18 @@ class Frame_cell extends Cell_Controller {
   //   return array ('time' => 60 * 60, 'key' => null);
   // }
   public function header () {
+    $as = array (
+      'l' => array (
+        '首頁' => base_url ()
+        ),
+      'r' => array (
+        '登入' => base_url (array ('login')),
+        '登出' => base_url (array ('logout')),
+        '註冊' => base_url (array ('register'))
+        ),
+      );
     return $this->setUseCssList (true)
-                ->load_view ();
+                ->load_view (array ('as' => $as));
   }
 
   /* render_cell ('frame_cell', 'footer', array ()); */

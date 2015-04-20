@@ -6,6 +6,7 @@
 @import "_oa";
 
 $navbarHeight: 40px;
+$borderBottomWidth: 4px;
 
 body {
   padding-top: $navbarHeight + 10px;
@@ -44,11 +45,16 @@ body {
       a {
         display: inline-block;
         float: left;
-        line-height: $navbarHeight - 2px;
+        line-height: $navbarHeight - $borderBottomWidth;
         padding: 0 10px;
-        @include a();
+        @include a(rgba(42, 90, 149, 0.7), rgba(12, 65, 109, .85));
+
+        border-bottom-width: $borderBottomWidth;
+        border-color: transparent;
+
         &.active, &:hover {
-          border-bottom-width: 2px;
+          border-bottom-width: $borderBottomWidth;
+          border-color: rgba(12, 65, 109, .8);
         }
 
         + a {

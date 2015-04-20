@@ -14,4 +14,16 @@ class Main extends Site_controller {
   public function index () {
     $this->load_view (null);
   }
+
+  public function login () {
+    $this->load_view (null);
+  }
+
+  public function logout () {
+    $this->load_view (null);
+  }
+
+  public function register () {
+    $this->load_view (null);
+  }
 }

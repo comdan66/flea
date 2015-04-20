@@ -44,6 +44,9 @@ Route::root ('main');
 
 // $route['admin'] = "admin/main";
 Route::get ('admin', 'admin/main@index');
+Route::get ('login', 'main@login');
+Route::get ('logout', 'main@logout');
+Route::get ('register', 'main@register');
 
 // $route['main/index/(:num)/(:num)'] = "main/aaa/$1/$2";
 // Route::get ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');

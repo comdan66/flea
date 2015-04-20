@@ -48,6 +48,8 @@ Route::get ('login', 'main@login');
 Route::get ('logout', 'main@logout');
 Route::get ('register', 'main@register');
 
+Route::get ('mac/(:num)', 'mac@index($1)');
+
 // $route['main/index/(:num)/(:num)'] = "main/aaa/$1/$2";
 // Route::get ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');
 // Route::post ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');

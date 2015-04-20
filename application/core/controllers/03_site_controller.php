@@ -30,7 +30,8 @@ class Site_controller extends Oa_controller {
   }
 
   private function _add_css () {
-    return $this;
+    return $this->add_css (base_url ('resource', 'css', 'oa', 'oa-jelly.css'))
+    ;
   }
 
   private function _add_js () {
@@ -38,6 +39,7 @@ class Site_controller extends Oa_controller {
                 ->add_js (base_url ('resource', 'javascript', 'jquery-rails_d2015_03_09', 'jquery_ujs.js'))
                 ->add_js (base_url ('resource', 'javascript', 'jquery-timeago_v1.3.1', 'jquery.timeago.js'))
                 ->add_js (base_url ('resource', 'javascript', 'jquery-timeago_v1.3.1', 'locales', 'jquery.timeago.zh-TW.js'))
+                ->add_js (base_url ('resource', 'javascript', 'oa', 'oa-jelly.js'))
                 ;
   }
 }

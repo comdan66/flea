@@ -8,4 +8,5 @@ window.ajaxError = function (result) {
 };
 
 $(function () {
+  $('button').OAjelly ();
 });

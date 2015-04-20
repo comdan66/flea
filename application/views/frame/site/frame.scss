@@ -8,5 +8,11 @@
 html {
   body {
 
+    #container {
+      display: inline-block;
+      margin: 0 auto;
+      width: $mainWidth;
+      min-height: calc(100% - #{$navbarHeight + $footerHeight + 30px});
+    }
   }
 }

@@ -5,7 +5,7 @@
 
 @mixin alert ($type: 'danger', $shadow: true) {
   padding: 3px 8px;
-  @include border-radius(4px);
+  @include border-radius(3px);
 
   @if $shadow == true {
     @include box-shadow(0 4px 8px rgba(0,0,0,.175));

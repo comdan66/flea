@@ -4,3 +4,19 @@
  */
 
 @import "_oa";
+
+#container {
+  display: inline-block;
+  margin: 0 auto;
+  width: $mainWidth;
+
+  .table-list {
+    @include table-list();
+    tbody {
+      tr {
+        td {
+        } 
+      }
+    }
+  } 
+}

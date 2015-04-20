@@ -5,11 +5,11 @@
 
 @import "_oa";
 
-$navbarHeight: 40px;
-$borderBottomWidth: 4px;
+$navbarHeight: 35px;
+$borderBottomWidth: 3px;
 
 body {
-  padding-top: $navbarHeight + 10px;
+  padding-top: $navbarHeight + 30px;
 }
 
 #header {

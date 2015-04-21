@@ -48,6 +48,8 @@ Route::get ('login', 'main@login');
 Route::post ('signin', 'main@signin');
 Route::get ('logout', 'main@logout');
 Route::get ('register', 'main@register');
+Route::post ('confirm', 'main@confirm');
+Route::get ('verify/(:any)', 'main@verify($1)');
 
 Route::get ('mac/(:num)', 'mac@index($1)');
 

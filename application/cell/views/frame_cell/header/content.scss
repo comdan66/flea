@@ -55,7 +55,13 @@ body {
           border-bottom-width: $borderBottomWidth;
           border-color: rgba(12, 65, 109, .8);
         }
-
+        &.active {
+          color: rgba(12, 65, 109, 1);
+        }
+      }
+    }
+    .l {
+      a {
         + a {
           margin-left: 10px;
         }
@@ -64,6 +70,9 @@ body {
     .r {
       a {
         float: right;
+        + a {
+          margin-right: 10px;
+        }
       }
     }
   }

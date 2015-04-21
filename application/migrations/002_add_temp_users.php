@@ -5,31 +5,28 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-class Migration_Add_users extends CI_Migration {
+class Migration_Add_temp_users extends CI_Migration {
   public function up () {
     $this->db->query (
-      "CREATE TABLE `users` (
+      "CREATE TABLE `temp_users` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '信箱',
         `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '密碼',
         `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '密碼',
-        `login_count` int(11) NOT NULL DEFAULT '0' COMMENT '登入次數',
-        `logined_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "' COMMENT '登入時間',
+        `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '驗證碼',
+        `user_id` int(11) DEFAULT '0' COMMENT '驗證過後的 user id，未驗證則 0',
         `updated_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "' COMMENT '註冊時間',
         `created_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "' COMMENT '更新時間',
         PRIMARY KEY (`id`),
-        KEY `email_index` (`email`),
-        KEY `email_password_index` (`email`, `password`)
+        KEY `code_user_index` (`code`, `user_id`),
+        KEY `email_user_index` (`email`, `user_id`),
+        FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"
-    );
-    $this->db->query (
-      "INSERT INTO `users` (`id`, `email`, `password`, `name`, `login_count`, `logined_at`, `created_at`, `updated_at`)
-        VALUES (1, 'oa@ioa.tw', '" . md5 ('123456') . "', 'OA', 0, '" . date ('Y-m-d H:i:s') . "', '" . date ('Y-m-d H:i:s') . "', '" . date ('Y-m-d H:i:s') . "');"
     );
   }
   public function down () {
     $this->db->query (
-      "DROP TABLE `users`;"
+      "DROP TABLE `temp_users`;"
     );
   }
 }

@@ -4,13 +4,13 @@
     <h2>Hi, 你準備好了嗎？</h2>
 
     <div class='row split-left'>
-      <label class='l' for='email'>信箱</label>
-      <input type='text' class='r' name='email' id='email' value='' placeholder='輸入信箱..' pattern=".{1,250}" required title="輸入信箱.." autofocus />
+      <label class='l' for='email'>電子郵件</label>
+      <input type='text' class='r' name='email' id='email' value='<?php echo $email ? $email : '';?>' placeholder='輸入電子郵件..' pattern="<?php echo trim (Cfg::setting ('format', 'user', 'email'), '/');?>" required title="輸入電子郵件.." autofocus />
     </div>
 
     <div class='row split-left'>
-      <label class='l' for='password'>密碼</label>
-      <input type='password' class='r' name='password' id='password' value='' placeholder='輸入密碼..' pattern=".{1,250}" required title="輸入密碼.."/>
+      <label class='l' for='password'>密  碼</label>
+      <input type='password' class='r' name='password' id='password' value='' placeholder='輸入密碼(6個英、數字元以上)..' pattern="<?php echo trim (Cfg::setting ('format', 'user', 'password'), '/');?>" required title="輸入密碼(6個英、數字元以上).."/>
     </div>
     
 <?php 
@@ -21,7 +21,7 @@
 
     <div class='row split-right'>
       <div class='l'>
-        <a href='<?php echo base_url ('register');?>'>立馬註冊加入！</a>
+        <a href='<?php echo base_url ('register');?>'>註冊，立馬加入！</a>
       </div>
       <div class='r'>
         <button type='submit'>準備好了，登入！</button>

@@ -21,7 +21,7 @@
 
   h2 {
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     padding-bottom: 15px;
     border-bottom: 4px solid rgba(39, 40, 34, .1);
   }
@@ -38,6 +38,7 @@
         padding: 4px;
       }
       .l {
+        margin-top: 1px;
         text-align: left;
 
         &:after {
@@ -52,23 +53,20 @@
     }
     &.split-right {
       border-top: 1px solid rgba(81, 81, 81, .3);
-      margin-top: 45px;
+      margin-top: 35px;
       padding: 20px 20px 0 20px;
-      @include split-right(150px);
+      @include split-right(50%);
 
       .l, .r {
         padding: 4px;
       }
       .l {
-        margin-top: 4px;
+        margin-top: 3px;
         text-align: center;
         color: rgba(50, 50, 50, 0.8);
-
-        &.error {
-          @include alert ('danger', false);
-        }
-        &.info {
-          @include alert ('info', false);
+        a {
+          @include a();
+          padding: 0 20px;
         }
       }
       .r {
@@ -78,6 +76,12 @@
           @include button();
         }
       }
+    }
+    &.error {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid rgba(255, 0, 0, .3);
+      @include alert('danger', false);
     }
   }
 }

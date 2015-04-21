@@ -4,21 +4,27 @@
     <h2>Hi, 你準備好了嗎？</h2>
 
     <div class='row split-left'>
-      <label class='l' for='account'>帳號</label>
-      <input type='text' class='r' name='account' id='account' value='' placeholder='輸入帳號..' pattern=".{1,250}" required title="輸入帳號.."/>
+      <label class='l' for='email'>信箱</label>
+      <input type='text' class='r' name='email' id='email' value='' placeholder='輸入信箱..' pattern=".{1,250}" required title="輸入信箱.." autofocus />
     </div>
 
     <div class='row split-left'>
       <label class='l' for='password'>密碼</label>
       <input type='password' class='r' name='password' id='password' value='' placeholder='輸入密碼..' pattern=".{1,250}" required title="輸入密碼.."/>
     </div>
+    
+<?php 
+    if (isset ($message) && $message) { ?>
+      <div class='row error'><?php echo $message;?></div>
+<?php 
+    } ?>
 
     <div class='row split-right'>
-      <div class='l<?php echo isset ($message) && $message ? ' error' : '';?>'>
-        <?php echo isset ($message) && $message ? $message : '第一次自動註冊';?>
+      <div class='l'>
+        <a href='<?php echo base_url ('register');?>'>立馬註冊加入！</a>
       </div>
       <div class='r'>
-        <button type='submit'>登入 or 註冊</button>
+        <button type='submit'>準備好了，登入！</button>
       </div>
     </div>
   </form>

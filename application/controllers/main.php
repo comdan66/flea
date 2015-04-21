@@ -1,4 +1,8 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
+
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
  * @author      OA Wu <comdan66@gmail.com>
@@ -12,6 +16,18 @@ class Main extends Site_controller {
   }
 
   public function test () {
+
+    # Instantiate the client.
+    $mgClient = new Mailgun ('key-049c5f015903ebd825e46dbe546a8db9');
+    $domain = "ioa.tw";
+
+    # Make the call to the client.
+    $result = $mgClient->sendMessage ($domain, array (
+        'from'    => 'Admin <admin@flea.ioa.tw>',
+        'to'      => 'comdan66 <comdan66@gmail.com>',
+        'subject' => 'Testing Hello',
+        'text'    => 'Testing!'
+    ));
 
       // $from = 'comdan66@yahoo.com.tw';
       // $to = 'comdan66@gmail.com';

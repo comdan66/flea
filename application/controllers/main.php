@@ -1,4 +1,7 @@
 <?php
+require 'vendor/autoload.php';
+use Mailgun\Mailgun;
+
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
@@ -13,7 +16,21 @@ class Main extends Site_controller {
   }
 
   public function test () {
-    
+    // $this->load->library ('OaMailGun');
+    // $mail = new OaMailGun ();
+
+    // $a = $mail->sendMessage (array (
+    //             'from' => Cfg::setting ('mail_gun', 'user', 'system', 'name') . ' <' . Cfg::setting ('mail_gun', 'user', 'system', 'email') . '>',
+    //             'to' => 'OA <comdan66@gmail.com>',
+    //             'subject' => 'Test',
+    //             'text' => 'Test 2'
+    //           ));
+         echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
+         var_dump ($a);
+         exit ();
+
+
+
   }
   public function index () {
     $this->load_view (null);

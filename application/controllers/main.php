@@ -16,22 +16,21 @@ class Main extends Site_controller {
   }
 
   public function test () {
-    // $this->load->library ('OaMailGun');
-    // $mail = new OaMailGun ();
+      // $this->load->library ('OaMailGun');
+      // $mail = new OaMailGun ();
 
-    // $a = $mail->sendMessage (array (
-    //             'from' => Cfg::setting ('mail_gun', 'user', 'system', 'name') . ' <' . Cfg::setting ('mail_gun', 'user', 'system', 'email') . '>',
-    //             'to' => 'OA <comdan66@gmail.com>',
-    //             'subject' => 'Test',
-    //             'text' => 'Test 2'
-    //           ));
-         echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
-         var_dump ($a);
-         exit ();
-
-
-
+      // $msg = "Hi 測試.\n";
+      // $result = $mail->sendMessage (array (
+      //             'from' => 'test <' . Cfg::setting ('mail_gun', 'user', 'system', 'email') . '>',
+      //             'to' => 'xd' . ' <comdan66@gmail.com>',
+      //             'subject' => "OA's Flea 系統通知",
+      //             'text' => $msg
+      //           ));
+      // echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
+      // var_dump ($result->http_response_code);
+      // exit ();
   }
+
   public function index () {
     $this->load_view (null);
   }
@@ -128,12 +127,14 @@ class Main extends Site_controller {
                           ->set_session ('name', $name, true)
                           ->set_session ('email', $email, true) && redirect (array ('register'), 'refresh');
     } else {
-      if (!($temp = TempUser::create (array ('name' => $name, 'email' => $email, 'password' => password ($password), 'code' => md5 ($code), 'user_id' => null))))
+      if (!($temp = TempUser::create (array ('name' => $name, 'email' => $email, 'password' => password ($password), 'code' => md5 ($code), 'user_id' => null, 'mail_count' => 0))))
         return identity ()->set_session ('_flash_message', '註冊失敗，請重新填寫表單！', true)
                           ->set_session ('name', $name, true)
                           ->set_session ('email', $email, true) && redirect (array ('register'), 'refresh');
     }
-    // send mail
+    
+    delay_job ('mail', 'confirm', array ('temp_user_id' => $temp->id, 'code' => $code));
+
     $this->load_view (array ('email' => $email));
   }
 }

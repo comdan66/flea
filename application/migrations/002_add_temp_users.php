@@ -15,6 +15,7 @@ class Migration_Add_temp_users extends CI_Migration {
         `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '密碼',
         `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT '驗證碼',
         `user_id` int(11) DEFAULT '0' COMMENT '驗證過後的 user id，未驗證則 0',
+        `mail_count` int(11) NOT NULL DEFAULT '0' COMMENT '驗証信寄發次數',
         `updated_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "' COMMENT '註冊時間',
         `created_at` datetime NOT NULL DEFAULT '" . date ('Y-m-d H:i:s') . "' COMMENT '更新時間',
         PRIMARY KEY (`id`),

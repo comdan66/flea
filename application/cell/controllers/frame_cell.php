@@ -14,13 +14,13 @@ class Frame_cell extends Cell_Controller {
   public function header () {
     $as = array (
       'l' => array (
-        '首頁' => base_url (),
-        'Apple' => base_url ('mac')
+        array ('name' => '首頁', 'href' => base_url (), 'show' => true),
+        array ('name' => 'Apple', 'href' => base_url ('apples'), 'show' => true),
         ),
       'r' => array (
-        '登入' => base_url ('login'),
-        '登出' => base_url ('logout'),
-        '註冊' => base_url ('register')
+        array ('name' => '登入', 'href' => base_url ('login'), 'show' => identity ()->user () ? false : true),
+        array ('name' => '登出', 'href' => base_url ('logout'), 'show' => identity ()->user () ? true : false),
+        array ('name' => '註冊', 'href' => base_url ('register'), 'show' => identity ()->user () ? false : true),
         ),
       );
     return $this->setUseCssList (true)

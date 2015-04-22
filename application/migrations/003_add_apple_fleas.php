@@ -5,10 +5,10 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-class Migration_Add_mac_fleas extends CI_Migration {
+class Migration_Add_apple_fleas extends CI_Migration {
   public function up () {
     $this->db->query (
-      "CREATE TABLE `mac_fleas` (
+      "CREATE TABLE `apple_fleas` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `user_id` int(11) NOT NULL,
 
@@ -39,7 +39,7 @@ class Migration_Add_mac_fleas extends CI_Migration {
   }
   public function down () {
     $this->db->query (
-      "DROP TABLE `mac_fleas`;"
+      "DROP TABLE `apple_fleas`;"
     );
   }
 }

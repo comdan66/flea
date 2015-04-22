@@ -16,6 +16,7 @@
   background: image-url('bg/lightgrunge.png', false, false);
   border: 1px solid rgba(39, 40, 34, .125);
 
+  @include paper();
   @include border-radius(3px);
   @include box-shadow(0 4px 8px rgba(0,0,0,.175));
 
@@ -61,15 +62,19 @@
         padding: 4px;
       }
       .l {
-        margin-top: 3px;
         text-align: center;
         color: rgba(50, 50, 50, 0.8);
         a {
           @include a();
-          padding: 0 20px;
+          padding: 0 15px;
+          font-size: 13px;
+          + a {
+            margin-top: 10px;
+          }
         }
       }
       .r {
+        margin-top: 8px;
         text-align: right;
 
         button {

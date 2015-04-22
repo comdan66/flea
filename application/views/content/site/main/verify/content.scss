@@ -16,6 +16,7 @@
   background: image-url('bg/lightgrunge.png', false, false);
   border: 1px solid rgba(39, 40, 34, .125);
 
+  @include paper();
   @include border-radius(3px);
   @include box-shadow(0 4px 8px rgba(0,0,0,.175));
 

@@ -62,7 +62,7 @@
         @include button();
       }
       &[type="submit"], &[type="button"] {
-        margin-top: 2px;
+        margin-top: 1px;
         padding: 4px 12px;
         
         + button {

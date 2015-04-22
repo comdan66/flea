@@ -5,9 +5,9 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-class MacFlea extends OaModel {
+class AppleFlea extends OaModel {
 
-  static $table_name = 'mac_fleas';
+  static $table_name = 'apple_fleas';
 
   static $has_one = array (
   );

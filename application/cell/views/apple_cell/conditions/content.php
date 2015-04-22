@@ -1,7 +1,7 @@
-<form action='<?php echo base_url ('mac');?>' method='get'>
+<form action='<?php echo base_url ('apples');?>' method='get'>
   <div class='conditions'>
     <div class='l'>
-<?php if ($actions = Cfg::setting ('flea', 'mac', 'actions')) { ?>
+<?php if ($actions = Cfg::setting ('flea', 'apple', 'actions')) { ?>
         <label for='action'>想要:
           <select id='action' name='action'>
             <option value=''>全部</option>
@@ -11,7 +11,7 @@
           </select>
         </label>
 <?php }
-      if ($tagss = Cfg::setting ('flea', 'mac', 'tags')) { ?>
+      if ($tagss = Cfg::setting ('flea', 'apple', 'tags')) { ?>
         <label for='tag'>想找:
           <select id='tag' name='tag'>
             <option value=''>其他</option>
@@ -29,7 +29,7 @@
           </select>
         </label>
 <?php }
-      if ($areas = Cfg::setting ('flea', 'mac', 'areas')) { ?>
+      if ($areas = Cfg::setting ('flea', 'apple', 'areas')) { ?>
         <label for='area'>想在:
           <select id='area' name='area'>
             <option value=''>不限</option>

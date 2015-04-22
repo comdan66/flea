@@ -5,14 +5,14 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-$flea['mac']['actions'] = array (
+$flea['apple']['actions'] = array (
   '賣',
   '買',
   '交換',
   '團購'
   );
 
-$flea['mac']['areas'] = array (
+$flea['apple']['areas'] = array (
   '新北',
   '台北',
   '基隆',
@@ -34,7 +34,7 @@ $flea['mac']['areas'] = array (
   '馬祖',
   );
 
-$flea['mac']['tags'] = array (
+$flea['apple']['tags'] = array (
   'iPhone' => array (
     'iPhone 第一代',
     'iPhone 3g',

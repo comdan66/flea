@@ -137,4 +137,12 @@ class Main extends Site_controller {
 
     $this->load_view (array ('email' => $email));
   }
+  public function forget () {
+    $this->load_view ();
+  }
+  public function forgot () {
+    $email = trim ($this->input_post ('email'));
+    
+    $this->load_view ();
+  }
 }

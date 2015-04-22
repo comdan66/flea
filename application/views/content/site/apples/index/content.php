@@ -3,8 +3,8 @@
 
   <div id='container'>
 
-<?php echo render_cell ('mac_cell', 'conditions', $qs); ?>
-<?php echo render_cell ('mac_cell', 'fleas', $mac_fleas); ?>
+<?php echo render_cell ('apple_cell', 'conditions', $qs); ?>
+<?php echo render_cell ('apple_cell', 'fleas', $apple_fleas); ?>
 
 <?php echo render_cell ('frame_cell', 'pagination', $pagination); ?>
 

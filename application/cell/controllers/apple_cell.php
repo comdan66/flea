@@ -5,18 +5,18 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-class Mac_cell extends Cell_Controller {
+class Apple_cell extends Cell_Controller {
 
-  /* render_cell ('mac_cell', 'fleas', $mac_fleas); */
+  /* render_cell ('apple_cell', 'fleas', $apple_fleas); */
   // public function _cache_list () {
   //   return array ('time' => 60 * 60, 'key' => null);
   // }
-  public function fleas ($mac_fleas) {
+  public function fleas ($apple_fleas) {
     return $this->setUseCssList (true)
-                ->load_view (array ('mac_fleas' => $mac_fleas));
+                ->load_view (array ('apple_fleas' => $apple_fleas));
   }
 
-  /* render_cell ('mac_cell', 'conditions', $qs); */
+  /* render_cell ('apple_cell', 'conditions', $qs); */
   // public function _cache_list () {
   //   return array ('time' => 60 * 60, 'key' => null);
   // }

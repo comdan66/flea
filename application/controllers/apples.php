@@ -5,7 +5,7 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-class Mac extends Site_controller {
+class apples extends Site_controller {
 
   public function __construct () {
     parent::__construct ();
@@ -27,7 +27,7 @@ class Mac extends Site_controller {
     $conditions = array (implode (' AND ', $temp));
 
     $limit = 25;
-    $total = MacFlea::count (array ('conditions' => $conditions));
+    $total = AppleFlea::count (array ('conditions' => $conditions));
     $offset = $offset < $total ? $offset : 0;
 
     $this->load->library ('pagination');
@@ -61,8 +61,8 @@ class Mac extends Site_controller {
     $this->pagination->initialize ($pagination_config);
     $pagination = $this->pagination->create_links ();
     
-    $mac_fleas = MacFlea::find ('all', array ('offset' => $offset, 'limit' => $limit, 'order' => 'id DESC', 'conditions' => $conditions));
+    $apple_fleas = AppleFlea::find ('all', array ('offset' => $offset, 'limit' => $limit, 'order' => 'id DESC', 'conditions' => $conditions));
     
-    $this->load_view (array ('pagination' => $pagination, 'mac_fleas' => $mac_fleas, 'qs' => $qs));
+    $this->load_view (array ('pagination' => $pagination, 'apple_fleas' => $apple_fleas, 'qs' => $qs));
   }
 }

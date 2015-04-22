@@ -22,6 +22,7 @@
     <div class='row split-right'>
       <div class='l'>
         <a href='<?php echo base_url ('register');?>'>註冊，立馬加入！</a>
+        <a href='<?php echo base_url ('forget');?>'>糟糕，我忘記密碼了..</a>
       </div>
       <div class='r'>
         <button type='submit'>準備好了，登入！</button>

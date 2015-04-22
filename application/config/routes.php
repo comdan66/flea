@@ -50,6 +50,8 @@ Route::get ('logout', 'main@logout');
 Route::get ('register', 'main@register');
 Route::post ('confirm', 'main@confirm');
 Route::get ('verify/(:any)', 'main@verify($1)');
+Route::get ('forget', 'main@forget');
+Route::post ('forgot', 'main@forgot');
 
 Route::get ('mac/(:num)', 'mac@index($1)');
 

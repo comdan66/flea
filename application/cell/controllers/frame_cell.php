@@ -18,9 +18,9 @@ class Frame_cell extends Cell_Controller {
         array ('name' => 'Apple', 'href' => base_url ('apples'), 'show' => true),
         ),
       'r' => array (
-        array ('name' => '登入', 'href' => base_url ('login'), 'show' => identity ()->user () ? false : true),
-        array ('name' => '登出', 'href' => base_url ('logout'), 'show' => identity ()->user () ? true : false),
-        array ('name' => '註冊', 'href' => base_url ('register'), 'show' => identity ()->user () ? false : true),
+        array ('name' => '登入', 'href' => base_url ('platform/login'), 'show' => identity ()->user () ? false : true),
+        array ('name' => '登出', 'href' => base_url ('platform/logout'), 'show' => identity ()->user () ? true : false),
+        array ('name' => '註冊', 'href' => base_url ('platform/register'), 'show' => identity ()->user () ? false : true),
         ),
       );
     return $this->setUseCssList (true)

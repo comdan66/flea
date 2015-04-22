@@ -44,14 +44,16 @@ Route::root ('main');
 
 // $route['admin'] = "admin/main";
 Route::get ('admin', 'admin/main@index');
-Route::get ('login', 'main@login');
-Route::post ('signin', 'main@signin');
-Route::get ('logout', 'main@logout');
-Route::get ('register', 'main@register');
-Route::post ('confirm', 'main@confirm');
-Route::get ('verify/(:any)', 'main@verify($1)');
-Route::get ('forget', 'main@forget');
-Route::post ('forgot', 'main@forgot');
+
+// Route::get ('login', 'main@login');
+// Route::post ('signin', 'main@signin');
+// Route::get ('logout', 'main@logout');
+// Route::get ('register', 'main@register');
+// Route::post ('confirm', 'main@confirm');
+// Route::get ('verify/(:any)', 'main@verify($1)');
+// Route::get ('forget', 'main@forget');
+// Route::post ('password', 'main@password');
+// Route::get ('forgot', 'main@forgot');
 
 Route::get ('mac/(:num)', 'mac@index($1)');
 

@@ -1,6 +1,6 @@
 <?php echo render_cell ('frame_cell', 'header', array ()); ?>
 <div id='container'>
-  <form class='login' action='<?php echo base_url (array ('signin'));?>' method='post'>
+  <form class='login' action='<?php echo base_url (array ('platform', 'signin'));?>' method='post'>
     <h2>Hi, 你準備好了嗎？</h2>
 
     <div class='row split-left'>
@@ -21,8 +21,8 @@
 
     <div class='row split-right'>
       <div class='l'>
-        <a href='<?php echo base_url ('register');?>'>註冊，立馬加入！</a>
-        <a href='<?php echo base_url ('forget');?>'>糟糕，我忘記密碼了..</a>
+        <a href='<?php echo base_url ('platform', 'register');?>'>註冊，立馬加入！</a>
+        <a href='<?php echo base_url ('platform', 'forget');?>'>糟糕，我忘記密碼了..</a>
       </div>
       <div class='r'>
         <button type='submit'>準備好了，登入！</button>

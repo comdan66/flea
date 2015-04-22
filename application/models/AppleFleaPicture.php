@@ -5,21 +5,18 @@
  * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
-class AppleFlea extends OaModel {
+class AppleFleaPicture extends OaModel {
 
-  static $table_name = 'apple_fleas';
+  static $table_name = 'apple_flea_pictures';
 
   static $has_one = array (
   );
 
   static $has_many = array (
-    array ('comments', 'class_name' => 'AppleFleaComment'),
-    array ('pictures', 'class_name' => 'AppleFleaPicture'),
-    array ('edit_logs', 'class_name' => 'AppleFleaEditLog')
   );
 
   static $belongs_to = array (
-    array ('user', 'class_name' => 'User')
+    array ('flea', 'class_name' => 'AppleFlea')
   );
 
   public function __construct ($attributes = array (), $guard_attributes = true, $instantiating_via_find = false, $new_record = true) {

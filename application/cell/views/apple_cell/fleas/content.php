@@ -12,16 +12,16 @@
   </thead>
   <tbody>
 <?php
-    if ($apple_fleas) {
-      foreach ($apple_fleas as $apple_flea) { ?>
+    if ($fleas) {
+      foreach ($fleas as $flea) { ?>
         <tr>
-          <td class='timeago' data-time='<?php echo $apple_flea->created_at;?>'><?php echo $apple_flea->created_at;?></td>
-          <td><?php echo $apple_flea->user->name;?></td>
-          <td><?php echo $apple_flea->id;?></td>
-          <td><?php echo $apple_flea->title;?></td>
-          <td>$<?php echo number_format ($apple_flea->price, 0);?></td>
-          <td><?php echo $apple_flea->tag;?></td>
-          <td><?php echo $apple_flea->area;?></td>
+          <td class='timeago' data-time='<?php echo $flea->created_at;?>'><?php echo $flea->created_at;?></td>
+          <td><?php echo $flea->user->name;?></td>
+          <td><?php echo $flea->id;?></td>
+          <td><?php echo $flea->title;?></td>
+          <td>$<?php echo number_format ($flea->price, 0);?></td>
+          <td><?php echo $flea->tag;?></td>
+          <td><?php echo $flea->area;?></td>
         </tr>
 <?php }
     } else { ?>

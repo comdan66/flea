@@ -49,7 +49,7 @@ class Email extends Delay_controller {
     $email = $this->input_post ('email');
     if ($user = User::find ('one', array ('select' => 'id, name, email, password', 'conditions' => array ('email = ?', $email)))) {
       $password = $this->_random_password ();
-      $user->password = md5 ($password);
+      $user->password = password ($password);
       
       if ($user->save ()) {
         $msg = 'Hi ' . $user->name . ',<br/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;系統已經幫您設定了一組新密碼，您現在可以使用這組新密碼<a href="' . base_url (array ('platform', 'login')) . '" target="_blank">登入</a>網站了。<br/><br/>這是您的新密碼: <font color="#bf242c">' . $password . '</font> 登入後記得重新設定個人密碼喔！<br/><br/><br/><font color="#666666">--</font><br/><br/><font color="#777777">' . Cfg::setting ('mail_gun', 'user', 'system', 'signature') . '</font><br/>';

@@ -11,9 +11,9 @@ class Apple_cell extends Cell_Controller {
   // public function _cache_list () {
   //   return array ('time' => 60 * 60, 'key' => null);
   // }
-  public function fleas ($apple_fleas) {
+  public function fleas ($fleas) {
     return $this->setUseCssList (true)
-                ->load_view (array ('apple_fleas' => $apple_fleas));
+                ->load_view (array ('fleas' => $fleas));
   }
 
   /* render_cell ('apple_cell', 'conditions', $qs); */

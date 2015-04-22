@@ -22,7 +22,7 @@ class Migration_Add_apple_flea_pictures extends CI_Migration {
         KEY `user_index` (`user_id`),
         KEY `apple_flea_index` (`apple_flea_id`),
         FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-        FOREIGN KEY (`apple_flea_id`) REFERENCES `apple_flea` (`id`) ON DELETE CASCADE
+        FOREIGN KEY (`apple_flea_id`) REFERENCES `apple_fleas` (`id`) ON DELETE CASCADE
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;"
     );
   }

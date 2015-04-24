@@ -17,7 +17,7 @@
         <tr>
           <td class='timeago' data-time='<?php echo $flea->created_at;?>'><?php echo $flea->created_at;?></td>
           <td><?php echo $flea->user->name;?></td>
-          <td><?php echo $flea->id;?></td>
+          <td><?php echo $flea->action;?></td>
           <td><?php echo $flea->title;?></td>
           <td>$<?php echo number_format ($flea->price, 0);?></td>
           <td><?php echo $flea->tag;?></td>

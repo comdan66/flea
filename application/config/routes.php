@@ -55,7 +55,7 @@ Route::get ('admin', 'admin/main@index');
 // Route::post ('password', 'main@password');
 // Route::get ('forgot', 'main@forgot');
 
-Route::get ('mac/(:num)', 'mac@index($1)');
+Route::get ('apples/(:num)', 'apples@index($1)');
 
 // $route['main/index/(:num)/(:num)'] = "main/aaa/$1/$2";
 // Route::get ('main/index/(:num)/(:num)', 'main@aaa($1, $2)');

@@ -10,19 +10,6 @@ class Email extends Delay_controller {
     parent::__construct ();
   }
 
-  private function _random_password ($length = 8) {
-    $elements = array_merge (
-                  range ('A', 'Z'),
-                  range ('a', 'z'),
-                  range ('0', '9'),
-                  array ('_', '+'));
-
-    $pass = array ();
-    for ($i = 0; $i < $length; $i++)
-      array_push ($pass, $elements[array_rand ($elements)]);
-
-    return implode ($pass);
-  }
   public function confirm_email () {
     $temp_user_id = $this->input_post ('temp_user_id');
     $code = $this->input_post ('code');
@@ -47,8 +34,11 @@ class Email extends Delay_controller {
   }
   public function forgot_password () {
     $email = $this->input_post ('email');
+    
     if ($user = User::find ('one', array ('select' => 'id, name, email, password', 'conditions' => array ('email = ?', $email)))) {
-      $password = $this->_random_password ();
+      $this->load->library ('CreateDemo');
+      
+      $password = CreateDemo::password ();
       $user->password = password ($password);
       
       if ($user->save ()) {

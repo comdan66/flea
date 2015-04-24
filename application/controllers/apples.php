@@ -13,18 +13,6 @@ class apples extends Site_controller {
     $this->model = 'AppleFlea';
   }
 
-
-
-  public function create ($offset = 0) {
-    $this->load->library ('CreateDemo');
-    
-    // echo '<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><pre>';
-    // var_dump (CreateDemo::pics ());
-    // var_dump (CreateDemo::pics ());
-    // var_dump (CreateDemo::pics ());
-    // exit ();
-  }
-
   public function index ($offset = 0) {
     $model = $this->model;
 
